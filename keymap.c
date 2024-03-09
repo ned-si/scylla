@@ -2,12 +2,12 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAIN] = LAYOUT_wrapper(
-    KC_ESC, KC_AGRV, KC_EGRV, KC_EAIG, KC_MINS, KC_UNDS,                             KC_QUOT, KC_DQT, KC_LPRN, KC_RPRN, NXTPRV, KC_MPLY,
+    KC_ESC, KC_AGRV, KC_EGRV, KC_EAIG, KC_MINS, KC_ESC,                             KC_DQT, KC_QUOT, KC_LPRN, KC_RPRN, NXTPRV, KC_MPLY,
     CW_TOGG, ________________MAIN_L1________________,                                ________________MAIN_R1________________, KC_CAPS,
-    KC_LGUI, KC_A, KC_S, KC_D, KC_F, KC_G,                                                 KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_LGUI,
+    KC_LGUI, KC_A, KC_S, KC_D, KC_F, KC_G,                                                 KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_LALT,
     MO(_MISC), ________________MAIN_L3________________,                                ________________MAIN_R3________________, KC_DEL,
                                           MO(_SYM), KC_LSFT, KC_LCTL, MO(_ACC), KC_SPC, MO(_NUM),
-                                                      KC_TAB, KC_LALT, KC_LCTL, KC_LSFT
+                                                      KC_ESC, KC_TAB, KC_BSPC, KC_ENT
   ),
 
   [_GAMING] = LAYOUT_wrapper(
@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
   [_MISC] = LAYOUT_wrapper(
-    _______, _______, _______, _______, _______, _______, RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW, RGB_M_SN, _______,
+    _______, _______, _______, _______, _______, _______,                            RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW, RGB_M_SN, _______,
     _______, ________________MISC_L1________________,                                RGB_M_K, RGB_M_X, RGB_M_G, RGB_M_T, RGB_M_TW, _______,
     _______, ________________MISC_L2________________,                                ________________MISC_R2________________, _______,
     _______, ________________MISC_L3________________,                                RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD,
