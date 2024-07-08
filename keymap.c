@@ -2,12 +2,12 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAIN] = LAYOUT_wrapper(
-    _______, KC_AGRV, KC_EGRV, KC_EAIG, KC_AMPR, KC_ESC,                KC_ENT, KC_QUOT, KC_MINS, KC_UNDS, NXTPRV, KC_MPLY,
+    KC_CAPS, KC_AGRV, KC_EGRV, KC_EAIG, CACCCV, KC_ESC,                KC_DQT, KC_QUOT, KC_MINS, KC_UNDS, NXTPRV, KC_MPLY,
     CW_TOGG, ________________MAIN_L1________________,                  ________________MAIN_R1________________, _______,
     KC_LGUI, KC_A, KC_S, KC_D, KC_F, KC_G,                             KC_H, KC_J, KC_K, KC_L, KC_COLN, KC_EQL,
-    MO(_MISC), ________________MAIN_L3________________,                ________________MAIN_R3________________, KC_CAPS,
+    MO(_MISC), ________________MAIN_L3________________,                ________________MAIN_R3________________, KC_DEL,
                             MO(_SYM), KC_LSFT, KC_LCTL,                KC_BSPC, KC_SPC, MO(_NUM),
-                                      KC_LALT, KC_TAB,                 KC_DEL, MO(_ACC)
+                                      KC_LALT,  KC_TAB,                MO(_ACC), KC_ENT
   ),
 
   [_GAMING] = LAYOUT_wrapper(
@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, ________________SYM_L2________________,                                ________________SYM_R2________________, _______,
     _______, ________________SYM_L3________________,                                ________________SYM_R3________________, _______,
                                              _______, _______, _______, _______, KC_SPC,MO(_NAV),
-                                                  _______, _______, _______, KC_UNDS
+                                                  _______, _______, _______, _______
   ),
 
   [_ACC] = LAYOUT_wrapper(
