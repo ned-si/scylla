@@ -3,6 +3,9 @@
 // Expands the userspace row macros before handing them to the keyboard layout.
 #define LAYOUT_scylla(...) LAYOUT_split_4x6_5(__VA_ARGS__)
 
+// Thumb clusters, per half, in layout order:
+//   row 1: outer, middle, inner
+//   row 2:        lower middle, lower inner
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAIN] = LAYOUT_scylla(
     KC_CAPS, KC_AGRV, KC_EGRV, KC_EAIG, CACCCV, KC_ESC,                KC_DQT, KC_QUOT, KC_MINS, KC_UNDS, NXTPRV, KC_MPLY,
@@ -13,13 +16,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       KC_LALT,  KC_TAB,                MO(_ACC), KC_ENT
   ),
 
+  // Left hand only: the right hand falls through to _MAIN.
   [_GAMING] = LAYOUT_scylla(
-    KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5,                                            KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC,
-    _______, ________________MAIN_L1________________,                                ________________MAIN_R1________________, _______,
-    _______, ________________GAMING_L2_________________,                             ________________MAIN_R2________________, _______,
-    _______, ________________GAMING_L3_________________,                             ________________MAIN_R3________________, _______,
-                                          MO(_SYM), KC_LSFT, KC_LCTL, KC_ENT, KC_SPC, MO(_NUM),
-                                                     KC_LALT, KC_TAB, KC_BSPC, MO(_ACC)
+    KC_ESC,  KC_1, KC_2, KC_3, KC_4, KC_5,                             _______, _______, _______, _______, _______, _______,
+    _______, ________________MAIN_L1________________,                  _______, _______, _______, _______, _______, _______,
+    KC_LSFT, KC_A, KC_S, KC_D, KC_F, KC_G,                             _______, _______, _______, _______, _______, _______,
+    KC_LALT, ________________MAIN_L3________________,                  _______, _______, _______, _______, _______, _______,
+                            MO(_SYM), KC_SPC, KC_LCTL,                 _______, _______, _______,
+                                      KC_TAB, KC_LSFT,                 _______, _______
   ),
 
   [_SYM] = LAYOUT_scylla(
@@ -49,8 +53,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                   _______, _______, _______, _______
   ),
 
+  // TG(_GAMING) far from the home position, so it is not hit by accident.
   [_NAV] = LAYOUT_scylla(
-    QK_BOOT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    QK_BOOT, _______, _______, _______, _______, TG(_GAMING), _______, _______, _______, _______, _______, _______,
     _______, ________________NAV_L1________________,                                ________________NAV_R1________________, _______,
     _______, ________________NAV_L2________________,                                ________________NAV_R2________________, _______,
     _______, ________________NAV_L3________________,                                ________________NAV_R3________________, _______,
