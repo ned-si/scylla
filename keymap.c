@@ -1,7 +1,10 @@
 #include "nedsi.h"
 
+// Expands the userspace row macros before handing them to the keyboard layout.
+#define LAYOUT_scylla(...) LAYOUT_split_4x6_5(__VA_ARGS__)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_MAIN] = LAYOUT_wrapper(
+  [_MAIN] = LAYOUT_scylla(
     KC_CAPS, KC_AGRV, KC_EGRV, KC_EAIG, CACCCV, KC_ESC,                KC_DQT, KC_QUOT, KC_MINS, KC_UNDS, NXTPRV, KC_MPLY,
     CW_TOGG, ________________MAIN_L1________________,                  ________________MAIN_R1________________, _______,
     KC_LGUI, KC_A, KC_S, KC_D, KC_F, KC_G,                             KC_H, KC_J, KC_K, KC_L, KC_COLN, KC_EQL,
@@ -10,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       KC_LALT,  KC_TAB,                MO(_ACC), KC_ENT
   ),
 
-  [_GAMING] = LAYOUT_wrapper(
+  [_GAMING] = LAYOUT_scylla(
     KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5,                                            KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC,
     _______, ________________MAIN_L1________________,                                ________________MAIN_R1________________, _______,
     _______, ________________GAMING_L2_________________,                             ________________MAIN_R2________________, _______,
@@ -19,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                      KC_LALT, KC_TAB, KC_BSPC, MO(_ACC)
   ),
 
-  [_SYM] = LAYOUT_wrapper(
+  [_SYM] = LAYOUT_scylla(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, ________________SYM_L1________________,                                ________________SYM_R1________________, _______,
     _______, ________________SYM_L2________________,                                ________________SYM_R2________________, _______,
@@ -28,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                   _______, _______, _______, _______
   ),
 
-  [_ACC] = LAYOUT_wrapper(
+  [_ACC] = LAYOUT_scylla(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, ________________ACC_L1________________,                                ________________ACC_R1________________, _______,
     _______, ________________ACC_L2________________,                                ________________ACC_R2________________, _______,
@@ -37,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                   _______, _______, _______, _______
   ),
 
-  [_NUM] = LAYOUT_wrapper(
+  [_NUM] = LAYOUT_scylla(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, ________________NUM_L1________________,                                ________________NUM_R1________________, _______,
     _______, ________________NUM_L2________________,                                ________________NUM_R2________________, _______,
@@ -46,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                   _______, _______, _______, _______
   ),
 
-  [_NAV] = LAYOUT_wrapper(
+  [_NAV] = LAYOUT_scylla(
     QK_BOOT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, ________________NAV_L1________________,                                ________________NAV_R1________________, _______,
     _______, ________________NAV_L2________________,                                ________________NAV_R2________________, _______,
@@ -55,13 +58,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                   _______, _______, _______, _______
     ),
 
-  [_MISC] = LAYOUT_wrapper(
-    _______, _______, _______, _______, _______, _______,                            RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW, RGB_M_SN, _______,
-    _______, ________________MISC_L1________________,                                RGB_M_K, RGB_M_X, RGB_M_G, RGB_M_T, RGB_M_TW, _______,
+  [_MISC] = LAYOUT_scylla(
+    _______, _______, _______, _______, _______, _______,                            RM_PREV, RM_NEXT, RM_SPDD, RM_SPDU, _______, _______,
+    _______, ________________MISC_L1________________,                                _______, _______, _______, _______, _______, _______,
     _______, ________________MISC_L2________________,                                ________________MISC_R2________________, _______,
-    _______, ________________MISC_L3________________,                                RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD,
+    _______, ________________MISC_L3________________,                                RM_HUEU, RM_HUED, RM_SATU, RM_SATD, RM_VALU, RM_VALD,
                                           _______, _______, _______, KC_MPRV, KC_MPLY, KC_MNXT,
-                                                  _______, _______, RGB_MOD,  RGB_TOG
+                                                  _______, _______, RM_NEXT,  RM_TOGG
   )
 };
 
