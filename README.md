@@ -30,7 +30,7 @@ key held to reach that layer; upper-case `SYM`, `NUM`, ... are hold-for-layer ke
 +-------+-------+-------+-------+-------+-------+                                  +-------+-------+-------+-------+-------+-------+
 |  Caps |   à   |   è   |   é   | Copy* |  Esc  |                                  |   "   |   '   |   -   |   _   | Next* |  Play |
 +-------+-------+-------+-------+-------+-------+                                  +-------+-------+-------+-------+-------+-------+
-|CapsWrd|   Q   |   W   |   E   |   R   |   T   |                                  |   Y   |   U   |   I   |   O   |   P   |       |
+|  Gui  |   Q   |   W   |   E   |   R   |   T   |                                  |   Y   |   U   |   I   |   O   |   P   |       |
 +-------+-------+-------+-------+-------+-------+                                  +-------+-------+-------+-------+-------+-------+
 |  Gui  |   A   |   S   |   D   |   F   |   G   |                                  |   H   |   J   |   K   |   L   |   :   |   =   |
 +-------+-------+-------+-------+-------+-------+                                  +-------+-------+-------+-------+-------+-------+
@@ -156,7 +156,6 @@ key held to reach that layer; upper-case `SYM`, `NUM`, ... are hold-for-layer ke
 - `:` sends `;` when shifted.
 - `Bksp` sends Delete when shifted.
 - `&` sends `|` when shifted.
-- `CapsWrd` is Caps Word: capitalises until the next non-word key.
 - `Shrug` types `¯\_(ツ)_/¯`.
 - The dead keys add a circumflex or diaeresis to the next letter.
 - `Boot` reboots into the bootloader, for flashing.

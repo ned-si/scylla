@@ -9,7 +9,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAIN] = LAYOUT_scylla(
     KC_CAPS, KC_AGRV, KC_EGRV, KC_EAIG, CACCCV, KC_ESC,                KC_DQT, KC_QUOT, KC_MINS, KC_UNDS, NXTPRV, KC_MPLY,
-    CW_TOGG, ________________MAIN_L1________________,                  ________________MAIN_R1________________, _______,
+    KC_LGUI, ________________MAIN_L1________________,                  ________________MAIN_R1________________, _______,
     KC_LGUI, KC_A, KC_S, KC_D, KC_F, KC_G,                             KC_H, KC_J, KC_K, KC_L, KC_COLN, KC_EQL,
     MO(_MISC), ________________MAIN_L3________________,                ________________MAIN_R3________________, KC_DEL,
                             MO(_SYM), KC_LSFT, KC_LCTL,                KC_BSPC, KC_SPC, MO(_NUM),
